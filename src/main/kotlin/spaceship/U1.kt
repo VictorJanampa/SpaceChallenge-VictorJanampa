@@ -10,11 +10,11 @@ class U1(
 ) : Rocket(cost, weight, maxWeight) {
 
     private var chanceOfLaunchExplosion: Double
-        get() = 0.05*(weight/maxWeight)
+        get() = 0.05*(weight.toDouble()/maxWeight.toDouble())
         set(_) {}
 
     private var chanceOfLandingCrash: Double
-        get() = 0.01*(weight/maxWeight)
+        get() = 0.01*(weight.toDouble()/maxWeight.toDouble())
         set(_) {}
 
     override fun launch(): Boolean {

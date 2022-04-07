@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 
     //Show simulations results
     val printPhase = { phase: Int, rocketType: String, budget: Int ->
-        print("Budget phase $phase for $rocketType : $budget")
+        println("Budget phase $phase for $rocketType : $budget")
     }
 
     printPhase(1, "U1",simulation.runSimulation(u1rocketsPhase1))
