@@ -3,7 +3,7 @@ import item.Item
 
 interface SpaceShip{
     val cost: Int
-    var weight: Int
+    val weight: Int
     val maxWeight: Int
 
     fun launch(): Boolean

@@ -2,7 +2,9 @@ package spaceship
 
 import item.Item
 
-open class Rocket(override val cost: Int, override var weight: Int, override val maxWeight: Int) : SpaceShip{
+open class Rocket(override val cost: Int, final override val weight: Int, final override val maxWeight: Int) : SpaceShip{
+    var cargoCarried = 0
+    val cargoLimit: Int = maxWeight - weight
 
     override fun launch(): Boolean {
         return true
@@ -11,10 +13,10 @@ open class Rocket(override val cost: Int, override var weight: Int, override val
         return true
     }
     override fun canCarry(item: Item): Boolean{
-        return maxWeight>=weight+item.weight
+        return cargoLimit>=cargoCarried+item.weight
     }
     override fun carry(item: Item){
-        weight+=item.weight
+        cargoCarried+=item.weight
     }
 
 }
